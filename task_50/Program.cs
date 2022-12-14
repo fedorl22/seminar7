@@ -5,13 +5,13 @@
 // 8 4 2 4
 // ​1 7 -> такого числа в массиве нет
 
-int[,] GetMatrix(int rowsCount, int columnsCount, int leftRange = 0, int rightRange = 50) 
+int[,] GetMatrix(int rowsCount, int columnsCount, int leftRange = 0, int rightRange = 50)
 {
     int[,] matr = new int[rowsCount, columnsCount];
     Random rand = new Random();
-    for (int i = 0; i < matr.GetLength(0); i++) 
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int j = 0; j < matr.GetLength(1); j++) 
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
             matr[i, j] = rand.Next(leftRange, rightRange);
 
@@ -39,9 +39,9 @@ void PrintMatrix(int[,] matr)
 }
 void GetElement(int[,] matr, int row, int column)
 {
-    if (row < matr.GetLength(0) && column < matr.GetLength(1))
+    if (row>0 && row < matr.GetLength(0) + 1 && column>0 && column < matr.GetLength(1) + 1)
     {
-        Console.WriteLine(matr[row-1, column-1]);
+        Console.WriteLine(matr[row - 1, column - 1]);
     }
     else
     {
